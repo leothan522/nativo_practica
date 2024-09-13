@@ -1,14 +1,11 @@
 <?php
 require_once '../lib/Route.php';
+require_once '../app/Controllers/HomeController.php';
 
+use app\controllers\HomeController;
 use lib\Route;
 
-Route::get("nativo/public", function(){
-    return [
-        'title' => 'Dashboard',
-        'content' => 'dashboard hola mundo'
-    ];
-});
+Route::get("nativo/public",[HomeController::class,'index']);
 
 Route::get("nativo/public/contact", function(){
     return 'hola contacto';
